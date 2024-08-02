@@ -2,6 +2,7 @@
 
 namespace Tests\Fixtures;
 
+use Closure;
 use Aviator\Shaper\Abstracts\ArrayShaper;
 use Aviator\Shaper\Abstracts\CollectionShaper;
 use Aviator\Shaper\Abstracts\ModelShaper;
@@ -46,7 +47,7 @@ class Make
     /**
      * @return \Closure
      */
-    public function callback () : \Closure
+    public function callback () : Closure
     {
         return function ($item) {
             return [

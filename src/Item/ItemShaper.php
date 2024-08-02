@@ -2,6 +2,7 @@
 
 namespace Aviator\Shaper\Item;
 
+use Closure;
 abstract class ItemShaper
 {
     /** @var mixed */
@@ -50,7 +51,7 @@ abstract class ItemShaper
      * @param \Closure $callback
      * @return $this
      */
-    public function setCallback (\Closure $callback)
+    public function setCallback (Closure $callback)
     {
         $this->shaperCb = $callback;
 
