@@ -3,6 +3,7 @@
 namespace Aviator\Shaper\Item;
 
 use Closure;
+
 abstract class ItemShaper
 {
     /** @var mixed */
@@ -12,34 +13,35 @@ abstract class ItemShaper
     protected $shaperCb;
 
     /**
-     * @param $item
      * @return mixed
      */
-    abstract public function shaper ($item);
+    abstract public function shaper($item);
 
     /**
      * @return array
      */
-    public function shape ()
+    public function shape()
     {
         return $this->shaper($this->item);
     }
 
     /**
      * Get the underlying array
+     *
      * @return array
      */
-    public function get ()
+    public function get()
     {
         return $this->item;
     }
 
     /**
      * Set the array.
+     *
      * @param array $item
      * @return static
      */
-    public function set ($item)
+    public function set($item)
     {
         $this->item = $item;
 
@@ -48,10 +50,10 @@ abstract class ItemShaper
 
     /**
      * Set the callback.
-     * @param \Closure $callback
+     *
      * @return $this
      */
-    public function setCallback (Closure $callback)
+    public function setCallback(Closure $callback)
     {
         $this->shaperCb = $callback;
 
